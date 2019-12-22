@@ -13,7 +13,7 @@ spring:
       maximum-pool-size: 20
       minimum-idle: 5
     password: 123456
-    url: jdbc:mysql://192.168.1.125:3306/xw?charset=utf8mb4&useSSL=false
+    url: jdbc:mysql://119.23.74.131:3306/xw?charset=utf8mb4&useSSL=false
     username: root
   jpa:
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
@@ -21,7 +21,7 @@ spring:
       ddl-auto: update
     show-sql: true
 server:
-  port: 6666
+  port: 6667
 eureka:
   client:
     service-url:
@@ -35,3 +35,10 @@ management:
     web:
       exposure:
         include: '*'
+  metrics:
+    export:
+      influx:
+        db: xw
+        password: 123
+        uri: http://192.168.2.150:8086
+        user-name: 123
